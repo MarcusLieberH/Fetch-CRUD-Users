@@ -25,7 +25,7 @@ async function fetchUsers(){
         // konverterer til JavaScript objekter
         const userData=await response.json();
 
-        // gemmer brugere i array
+        // gemmer brugere i array 
         users=userData;
 
         showMessage('Brugere hentet med sucess', 'sucess');
@@ -129,6 +129,7 @@ async function createUser(name, email){
 }
 //===================REDIGER OG SLET===================
 // note, indtil videre kan man ikke redigere brugere med høje ID'er som 11,12,13. det virker kunb for id 1-10
+//Redigering fejler fordi koden forsøger at sende en PUT request til serveren med et ID den ikke kender
 // EventListener til rediger og slet knappen
 usersTable.addEventListener('click', handleTableClick);
 document.getElementById('cancelEdit').addEventListener('click', resetForm);
